@@ -123,7 +123,7 @@ int main()
 
     string s = to_string(NUM);
 
-    cout << NUM << endl;
+    // cout << NUM << endl;
 
     vector<string> vs;
     string demo;
@@ -142,7 +142,7 @@ int main()
     }
 
     vector<int> vnum;
-
+    cout << "Random Credit Card Number Generated is : ";
     for (auto i : vs)
     {
         cout << i << " ";

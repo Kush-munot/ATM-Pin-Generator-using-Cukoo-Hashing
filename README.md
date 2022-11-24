@@ -198,3 +198,9 @@ int main()
     return 0;
 }
 ```
+
+## Outputs
+
+![Untitled](https://i.imgur.com/BVvAvvS.jpg)
+
+![Untitled](https://i.imgur.com/USPEHwn.jpg)

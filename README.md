@@ -35,15 +35,9 @@ h1(key) = key%11
 h2(key) = (key/11)%11
 ```
 
-![Untitled](Kush%20Munot%205283fe68295040eca459ef5e0f35ecd3/Untitled.png)
+![Untitled](https://i.imgur.com/dwXp5Bb.jpg)
 
-![Untitled](Kush%20Munot%205283fe68295040eca459ef5e0f35ecd3/Untitled%201.png)
-
-![Untitled](Kush%20Munot%205283fe68295040eca459ef5e0f35ecd3/Untitled%202.png)
-
-![Untitled](Kush%20Munot%205283fe68295040eca459ef5e0f35ecd3/Untitled%203.png)
-
-## Credit Card or Deebit Card number Generator using Cukoo Hashing
+## Credit Card or Debit Card number Generator using Cukoo Hashing
 
 In the main function we are taking Input, creating a random array using rand( ), printing that array for convinience and calling the Cukoo( ) Hashig function. The sequence is then stored in a long long NUM named variable. I have converted it into a string and divided the output in a bucket of 4 numbers each. I print this Bucket after the execution is over.
 

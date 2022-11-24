@@ -83,16 +83,16 @@ void cuckoo(int keys[], int n)
 int main()
 {
     int n;
-    cout << "Please enter the size of the Input Array\n"
-         << endl;
+    cout << "Please enter the size of the Input Array\n"<< endl;
     cin >> n;
+
     int keys_1[n];
     for (int i = 0; i < n; i++)
     {
         keys_1[i] = rand() % 99;
     }
-    cout << "Generated Array is \n\n"
-         << endl;
+
+    cout << "Generated Array is \n\n"<< endl;
     for (int i = 0; i < n; i++)
     {
         cout << keys_1[i] << " ";
@@ -102,8 +102,7 @@ int main()
     cuckoo(keys_1, n);
 
     int m;
-    cout << "Please enter the size of the Input Array\n"
-         << endl;
+    cout << "Please enter the size of the Input Array\n"<< endl;
     cin >> m;
 
     int keys_2[m];
@@ -111,8 +110,8 @@ int main()
     {
         keys_2[i] = rand() % 99;
     }
-    cout << "Generated Array is \n\n"
-         << endl;
+
+    cout << "Generated Array is \n\n"<< endl;
     for (int i = 0; i < m; i++)
     {
         cout << keys_2[i] << " ";
@@ -122,8 +121,6 @@ int main()
     cuckoo(keys_2, m);
 
     string s = to_string(NUM);
-
-    // cout << NUM << endl;
 
     vector<string> vs;
     string demo;

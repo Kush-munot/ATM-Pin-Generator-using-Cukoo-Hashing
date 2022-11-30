@@ -5,18 +5,18 @@ using namespace std;
 long long NUM = 1;
 #define ver 2
 
-int hashtable[ver][MAXN];
+int cukooHashTable[ver][MAXN];
 
 int pos[ver];
 
-void initTable()
+void initialTable()
 {
     for (int j = 0; j < MAXN; j++)
         for (int i = 0; i < ver; i++)
-            hashtable[i][j] = INT_MIN;
+            cukooHashTable[i][j] = INT_MIN;
 }
 
-int hashed(int function, int key)
+int hashedKeys(int function, int key)
 {
     switch (function)
     {
@@ -38,46 +38,46 @@ void place(int key, int tableID, int cnt, int n)
 
     for (int i = 0; i < ver; i++)
     {
-        pos[i] = hashed(i + 1, key);
-        if (hashtable[i][pos[i]] == key)
+        pos[i] = hashedKeys(i + 1, key);
+        if (cukooHashTable[i][pos[i]] == key)
             return;
     }
 
-    if (hashtable[tableID][pos[tableID]] != INT_MIN)
+    if (cukooHashTable[tableID][pos[tableID]] != INT_MIN)
     {
-        int dis = hashtable[tableID][pos[tableID]];
-        hashtable[tableID][pos[tableID]] = key;
+        int dis = cukooHashTable[tableID][pos[tableID]];
+        cukooHashTable[tableID][pos[tableID]] = key;
         place(dis, (tableID + 1) % ver, cnt + 1, n);
     }
     else
-        hashtable[tableID][pos[tableID]] = key;
+        cukooHashTable[tableID][pos[tableID]] = key;
 }
 
-void printTable()
+void printHashTable()
 {
     printf("Final hash tables:\n");
 
     for (int i = 0; i < ver; i++, printf("\n"))
         for (int j = 0; j < MAXN; j++)
         {
-            if (hashtable[i][j] != INT_MIN)
+            if (cukooHashTable[i][j] != INT_MIN)
             {
-                printf("%d ", hashtable[i][j]);
-                NUM *= hashtable[i][j];
+                printf("%d ", cukooHashTable[i][j]);
+                NUM *= cukooHashTable[i][j];
             }
         }
 
     printf("\n");
 }
 
-void cuckoo(int keys[], int n)
+void cuckooFunction(int keys[], int n)
 {
-    initTable();
+    initialTable();
 
     for (int i = 0, cnt = 0; i < n; i++, cnt = 0)
         place(keys[i], 0, cnt, n);
 
-    printTable();
+    printHashTable();
 }
 
 int main()
@@ -99,7 +99,7 @@ int main()
     }
     cout << endl;
 
-    cuckoo(keys_1, n);
+    cuckooFunction(keys_1, n);
 
     int m;
     cout << "Please enter the size of the Input Array\n"
@@ -119,7 +119,7 @@ int main()
     }
     cout << endl;
 
-    cuckoo(keys_2, m);
+    cuckooFunction(keys_2, m);
 
     string s = to_string(NUM);
 
